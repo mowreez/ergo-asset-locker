@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Ergo Asset Locker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <img src="ergo-logo.png" alt="Ergo logo" />
+      </div>
+      <div class="header">
+        <button type="button" onclick="connectWallet()">Connect Wallet</button>
+      </div>
+      <div class="form">
+        <h2>Ergo Asset Locker</h2>
+        <form>
+          <div class="input-group">
+            <label for="amount">Amount (in ERG)</label>
+            <input type="number" id="amount" placeholder="Enter amount" required />
+          </div>
+          <div class="input-group">
+            <label for="pin">Cryptographic PIN</label>
+            <input type="password" id="pin" placeholder="Enter PIN" required />
+          </div>
+          <div class="input-group">
+            <label for="duration">Lock Duration</label>
+            <div class="duration-input">
+              <input type="number" id="years" placeholder="Years" />
+              <input type="number" id="months" placeholder="Months" />
+              <input type="number" id="days" placeholder="Days" />
+              <input type="number" id="hours" placeholder="Hours" />
+            </div>
+          </div>
+          <div class="input-group">
+            <button type="button" onclick="sendTransaction()">Send Transaction</button>
+          </div>
+          <div class="message">
+            <p id="message"></p>
+          </div>
+          <div class="input-group">
+            <button type="button" onclick="displayLockedAsset()">Display Locked Asset</button>
+          </div>
+          <div class="asset-info">
+            <p id="asset-info"></p>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@ergolabs/ergo-sdk@0.5.1/dist/ergo-sdk.umd.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
